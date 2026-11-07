@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f0e8" />
+  <title>Հրավեր | invitely</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="scene">
+    <div class="brand">invitely <span></span></div>
+
+    <section class="intro" id="intro">
+      <p class="eyebrow">ՄԻ ՓՈՔՐԻԿ ԱՆԱԿՆԿԱԼ ՔԵԶ ՀԱՄԱՐ</p>
+      <h1>Մի գեղեցիկ պատմություն<br><em>շուտով կսկսվի…</em></h1>
+      <p class="hint">Սեղմիր ծրարի վրա՝ հրավիրատոմսը բացելու համար</p>
+    </section>
+
+    <button class="envelope" id="envelope" aria-label="Բացել հրավիրատոմսը" aria-expanded="false">
+      <span class="envelope-shadow"></span>
+      <span class="envelope-back"></span>
+      <span class="letter">
+        <span class="letter-kicker">ԴՈՒ ՀՐԱՎԻՐՎԱԾ ԵՍ</span>
+        <span class="letter-names">Ալեքս <i>&</i> Էմմա</span>
+        <span class="letter-rule"></span>
+        <span class="letter-date">ԱՆՄՈՌԱՆԱԼԻ ՕՐ</span>
+      </span>
+      <span class="envelope-front"></span>
+      <span class="envelope-flap"></span>
+      <span class="wax-seal">✉</span>
+    </button>
+
+    <section class="invitation" id="invitation" aria-hidden="true">
+      <p class="eyebrow"></p>
+      <p class="invite-lead">Ուրախությամբ հրավիրում ենք քեզ՝<br>
+         միասին նշելու մեր սիրո տոնը</p>
+      <h2>Ալեքս <span>&</span> Էմմա</h2>
+      <div class="ornament">✧ &nbsp; ✧ &nbsp; ✧</div>
+      <p class="invite-message">Մեր կյանքի ամենագեղեցիկ պահերից մեկը ցանկանում ենք դարձնել առավել հիշարժան՝հենց քեզ հետ․</p>
+
+      <div class="details">
+        <div><span>ԱՄՍԱԹԻՎ</span><strong>Շաբաթ, 18 սեպտեմբերի 2027</strong></div>
+        <div><span>ԺԱՄ</span><strong>17:00</strong></div>
+        <div><span>ՎԱՅՐ</span><strong>«Garden House»</strong></div>
+      </div>
+
+      <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=The+Garden+House" target="_blank" rel="noopener">Տեսնել քարտեզը ↗</a>
+       <section class="gallery">
+    <p class="eyebrow">ՄԵՐ ՊԱՏՄՈՒԹՅՈՒՆԸ</p>
+
+    <h3>Մեր գեղեցիկ պահերը</h3>
+
+    <p class="gallery-text">
+        Յուրաքանչյուր լուսանկար մի փոքրիկ հիշողություն է։
+    </p>
+     <div class="gallery-grid">
+    <img src="./images/photo1.jpg" alt="Photo 1">
+    <img src="./images/photo2.jpg" alt="Photo 2">
+    <img src="./images/photo3.jpg" alt="Photo 3">
+    <img src="./images/photo4.jpg" alt="Photo 4">
+</div>
+
+    <section class="dress-code">
+
+    <p class="eyebrow">ՄԵՐ ՕՐՎԱ ԳՈՒՅՆԵՐԸ</p>
+
+    <h3>Dress Code</h3>
+
+    <p>
+        Կցանկանայինք, որ մեր գեղեցիկ օրը
+        լրացվեր այս նուրբ երանգներով։
+    </p>
+
+    <div class="color-palette">
+        <span style="background:#E9DFD0"></span>
+        <span style="background:#C8B49B"></span>
+        <span style="background:#A58B72"></span>
+        <span style="background:#777766"></span>
+        <span style="background:#F5F0E8"></span>
+    </div>
+
+    <p class="dress-note">
+        Խնդրում ենք ընտրել այս գունային երանգներին
+        համապատասխան հագուստ։
+    </p>
+
+</section>
+</section>
+      <div class="rsvp">
+        <p class="rsvp-title">ԿՍՊԱՍԵՆՔ ՔՈ ՊԱՏԱՍԽԱՆԻՆ</p>
+        <p class="rsvp-subtitle">Խնդրում ենք հաստատել մասնակցությունդ։</p>
+        <form id="rsvpForm">
+          <input id="guestName" type="text" placeholder="Քո անունը" required />
+          <select id="attendance" required>
+            <option value="" disabled selected>Կմիանա՞ս մեզ</option>
+            <option value="Այո, սիրով կմասնակցեմ">Այո, սիրով կմասնակցեմ</option>
+            <option value="Ցավոք, չեմ կարողանա գալ">Ցավոք, չեմ կարողանա գալ</option>
+          </select>
+          <button type="submit" class="send-button">Ուղարկել պատասխանը</button>
+        </form>
+        <p class="form-note" id="formNote"> պատասխանը ուղարկվում կազմակերպիչներին։</p>
+      </div>
+
+      <p class="closing">Սիրով՝ Ալեքս և Էմմա</p>
+      <button class="close-button" id="closeButton">Փակել հրավիրատոմսը</button>
+    </section>
+
+    <footer>ՍՏԵՂԾՎԱԾ Է ՍԻՐՈՎ՝ <strong>invitely</strong></footer>
+  </main>
+
+  <audio id="weddingMusic" loop>
+    <source src="music/wedding.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" class="music-button">
+    ♫ Միացրու երգը
+
+</button>
+<script src="script.js"></script>
+
+</body>
+</html>

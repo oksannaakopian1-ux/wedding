@@ -1,0 +1,123 @@
+* { box-sizing: border-box; }
+:root { --paper: #f5f0e8; --ink: #51483f; --muted: #9b8c7c; --gold: #b49a75; }
+body { margin: 0; min-height: 100vh; color: var(--ink); background: radial-gradient(ellipse at 50% 35%, #fffdf8 0%, #f5f0e8 58%, #e9dfd1 100%); font-family: "Noto Serif Armenian", serif; }
+.scene { min-height: 100vh; padding: 28px 20px 22px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; overflow: hidden; position: relative; }
+.scene::before, .scene::after { content: ""; position: absolute; width: 280px; height: 280px; border: 1px solid rgba(180,154,117,.16); border-radius: 50%; pointer-events: none; }
+.scene::before { top: -190px; left: -140px; } .scene::after { bottom: -200px; right: -140px; }
+.brand { font-size: 17px; letter-spacing: .18em; text-align: center; z-index: 1; } .brand span { display: block; margin-top: 5px; font: 8px "Manrope", sans-serif; letter-spacing: .16em; color: var(--muted); }
+.intro { text-align: center; margin: 34px 0 4px; transition: opacity .5s, transform .5s; z-index: 1; }
+.eyebrow { font: 9px "Manrope", sans-serif; letter-spacing: .2em; color: var(--muted); }
+h1 { font: 400 clamp(28px, 7vw, 43px)/1.35 "Noto Serif Armenian", serif; margin: 18px 0 13px; } h1 em { color: #9e8466; font-weight: 400; }
+.hint { color: #988b7d; font: 10px "Manrope", sans-serif; margin-top: 22px; }
+.envelope { border: 0; background: transparent; width: min(82vw, 390px); height: 255px; position: relative; cursor: pointer; perspective: 1000px; margin: 8px 0 22px; -webkit-tap-highlight-color: transparent; }
+.envelope-shadow { position: absolute; width: 88%; height: 25px; left: 6%; bottom: 0; border-radius: 50%; background: rgba(75,57,38,.15); filter: blur(14px); }
+.envelope-back { position: absolute; inset: 18px 0 20px; background: #d9c9b4; border-radius: 5px; box-shadow: 0 18px 40px rgba(77,58,39,.13); }
+.letter { position: absolute; width: 82%; height: 205px; left: 9%; bottom: 25px; background: #fffdf8; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 4px 18px rgba(70,55,40,.08); transition: transform 1s cubic-bezier(.2,.8,.2,1); z-index: 2; }
+.letter-kicker, .letter-date { font: 8px "Manrope", sans-serif; letter-spacing: .18em; color: var(--muted); }
+.letter-names { font: 32px "Noto Serif Armenian", serif; } .letter-names i { color: var(--gold); font-size: 20px; }
+.letter-rule { width: 45px; height: 1px; background: var(--gold); }
+.envelope-front { position: absolute; inset: 18px 0 20px; z-index: 3; border-radius: 5px; background: linear-gradient(145deg, #eee3d4, #d8c7b0); clip-path: polygon(0 0, 50% 57%, 100% 0, 100% 100%, 0 100%); }
+.envelope-flap { position: absolute; inset: 18px 0 auto; height: 145px; z-index: 4; transform-origin: top; background: linear-gradient(160deg, #f2e8da, #d7c4ab); clip-path: polygon(0 0, 100% 0, 50% 100%); transition: transform .8s ease, opacity .5s; backface-visibility: hidden; }
+.wax-seal { position: absolute; z-index: 5; top: 112px; left: calc(50% - 20px); width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #f8eee0; font: 22px "Noto Serif Armenian", serif; background: radial-gradient(circle at 35% 30%, #b99b7d, #84654e); box-shadow: 0 3px 8px #80634c55; transition: opacity .35s, transform .35s; }
+.envelope:hover { transform: translateY(-3px); } .envelope.open .envelope-flap { transform: rotateX(180deg); opacity: .2; } .envelope.open .wax-seal { opacity: 0; transform: scale(.5); } .envelope.open .letter { transform: translateY(-145px); }
+.intro.hide { opacity: 0; transform: translateY(-15px); pointer-events: none; }
+.invitation { position: absolute; z-index: 8; width: min(90vw, 440px); max-height: 82vh; overflow-y: auto; top: 50%; left: 50%; transform: translate(-50%, -44%) scale(.94); opacity: 0; pointer-events: none; padding: 30px 22px 24px; text-align: center; background: rgba(255,253,248,.98); border: 1px solid #e8ddce; box-shadow: 0 25px 80px rgba(65,49,34,.2); transition: opacity .65s, transform .65s; }
+.invitation.show { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
+.invite-lead { font-size: 14px; color: var(--muted); margin: 20px 0 5px; } h2 { font: 400 clamp(34px, 8vw, 48px) "Noto Serif Armenian", serif; margin: 0; } h2 span { color: var(--gold); font-style: italic; }
+.ornament { color: var(--gold); margin: 13px 0; font-size: 13px; } .invite-message { font-size: 14px; line-height: 1.8; color: #76695c; }
+.details { border-top: 1px solid #e8ddce; border-bottom: 1px solid #e8ddce; margin: 20px 0; padding: 16px 0; display: grid; gap: 13px; } .details div { display: grid; gap: 5px; }
+.details span, .rsvp-title { font: 8px "Manrope", sans-serif; letter-spacing: .18em; color: var(--muted); } .details strong { font-size: 14px; font-weight: 500; }
+.map-button { display: inline-block; color: #76634f; border: 1px solid #d8c8b5; padding: 10px 18px; margin: 0 auto 20px; text-decoration: none; font-size: 12px; }
+.rsvp { border-top: 1px solid #e8ddce; padding-top: 18px; } .rsvp-title { margin: 0 0 7px; } .rsvp-subtitle { font-size: 12px; color: #8c7b69; }
+#rsvpForm { display: grid; gap: 9px; margin: 14px 0 8px; } #rsvpForm input, #rsvpForm select { width: 100%; padding: 12px; border: 1px solid #e3d8ca; background: #fffefa; color: #625548; font: 12px "Noto Serif Armenian", serif; border-radius: 0; }
+.send-button, .close-button { padding: 11px 16px; border: 1px solid #cbb89f; background: #e9dfd2; color: #665744; font: 10px "Noto Serif Armenian", serif; cursor: pointer; }
+.form-note { font: 9px "Manrope", sans-serif; color: #a09283; line-height: 1.5; } .closing { font-size: 14px; color: #8c7865; margin-top: 18px; }
+.close-button { margin-top: 10px; background: transparent; } footer { font: 8px "Manrope", sans-serif; letter-spacing: .2em; color: #a09283; z-index: 1; } footer strong { color: #786957; font-weight: 500; }
+@media (max-height: 720px) { .intro { margin-top: 10px; } .envelope { height: 220px; transform: scale(.88); margin: -3px 0; } }
+
+
+body {
+    background-image:
+        linear-gradient(
+            rgba(250, 248, 245, 0.75),
+            rgba(250, 248, 245, 0.75)
+        ),
+        url("images/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+.music-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    background: #9d8468;
+    color: white;
+
+    border: none;
+    border-radius: 50px;
+
+    padding: 12px 22px;
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+.gallery,
+.dress-code {
+    margin: 65px 0;
+    text-align: center;
+}
+
+.gallery h3,
+.dress-code h3 {
+    font-family: 'Noto Serif Armenian', serif;
+    font-size: 27px;
+    font-weight: 400;
+    color: #594a3e;
+    margin: 15px 0;
+}
+
+.gallery-text,
+.dress-code p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #887969;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 28px 0;
+}
+
+.color-palette span {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #ddd2c5;
+}
+
+.dress-note {
+    font-size: 12px;
+    font-style: italic;
+}
